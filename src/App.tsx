@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.jpg';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -262,7 +262,7 @@ const Footer = ({ setActivePage }: { setActivePage: (p: Page) => void }) => (
 
 // --- Page Views ---
 
-const HomePage = ({ setActivePage }: { setActivePage: (p: Page) => void; key?: string }) => (
+const HomePage: React.FC<{ setActivePage: (p: Page) => void }> = ({ setActivePage }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -429,7 +429,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (p: Page) => void; key?: s
   </motion.div>
 );
 
-const MenuPage = ({ key }: { key?: string }) => {
+const MenuPage: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'sweets' | 'cakes' | 'fast-food'>('all');
 
   const filteredItems = filter === 'all' ? MENU_ITEMS : MENU_ITEMS.filter(item => item.category === filter);
@@ -497,7 +497,7 @@ const MenuPage = ({ key }: { key?: string }) => {
   );
 };
 
-const AboutPage = ({ key }: { key?: string }) => (
+const AboutPage: React.FC = () => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -552,7 +552,7 @@ const AboutPage = ({ key }: { key?: string }) => (
   </motion.div>
 );
 
-const GalleryPage = ({ key }: { key?: string }) => (
+const GalleryPage: React.FC = () => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -587,7 +587,7 @@ const GalleryPage = ({ key }: { key?: string }) => (
   </motion.div>
 );
 
-const ContactPage = ({ key }: { key?: string }) => (
+const ContactPage: React.FC = () => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
