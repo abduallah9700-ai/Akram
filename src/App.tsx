@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logo from './logo.jpg';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Instagram, 
@@ -146,7 +147,7 @@ const Navbar = ({ activePage, setActivePage }: { activePage: Page, setActivePage
         >
           <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded-full border border-accent/20">
             <img 
-              src="/Akram.logo.jpg" 
+              src={logo} 
               className="w-full h-full object-cover transition-transform group-hover:scale-110" 
               alt="Akram Sweets Logo"
             />
@@ -208,7 +209,7 @@ const Footer = ({ setActivePage }: { setActivePage: (p: Page) => void }) => (
         <div className="flex items-center gap-3 mb-8">
           <div className="w-12 h-12 flex items-center justify-center overflow-hidden rounded-full border border-white/20">
             <img 
-              src="/Akram.logo.jpg" 
+              src={logo} 
               className="w-full h-full object-cover" 
               alt="Akram Sweets Logo"
             />
